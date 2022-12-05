@@ -4,6 +4,7 @@ plugins {
     kotlin("jvm") version "1.7.20"
     application
     jacoco
+    id("org.sonarqube") version("3.5.0.2730")
 }
 
 group = "pawanroy.leetcode"
@@ -34,6 +35,14 @@ tasks.jacocoTestReport{
 jacoco {
     toolVersion = "0.8.8"
     reportsDirectory.set(layout.buildDirectory.dir("customJacocoReportDir"))
+}
+
+sonarqube {
+    properties {
+        property ("sonar.projectKey", "PawanRoy1997_leetcode_studyplan")
+        property ("sonar.organization", "pawanroy1997")
+        property( "sonar.host.url", "https://sonarcloud.io")
+    }
 }
 
 tasks.withType<KotlinCompile> {
