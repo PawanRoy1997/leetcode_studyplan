@@ -44,7 +44,7 @@ sonarqube {
         property ("sonar.projectKey", "PawanRoy1997_leetcode_studyplan")
         property ("sonar.organization", "pawanroy1997")
         property( "sonar.host.url", "https://sonarcloud.io")
-        property( "sonar.jacoco.reportPaths", layout.buildDirectory.file("jacocoHtml/jacocoXml"))
+        property( "sonar.coverage.jacoco.xmlReportPaths", layout.buildDirectory.file("jacocoHtml/jacocoXml"))
     }
 }
 
