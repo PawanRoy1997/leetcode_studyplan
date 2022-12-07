@@ -29,7 +29,7 @@ tasks.jacocoTestReport{
         xml.required.set(true)
         csv.required.set(false)
         html.required.set(true)
-        xml.outputLocation.set(layout.buildDirectory.file("jacocoHtml/jacocoXml"))
+        xml.outputLocation.set(layout.buildDirectory.file("jacocoHtml/jacoco.xml"))
         html.outputLocation.set(layout.buildDirectory.dir("jacocoHtml"))
     }
 }
@@ -44,7 +44,7 @@ sonarqube {
         property ("sonar.projectKey", "PawanRoy1997_leetcode_studyplan")
         property ("sonar.organization", "pawanroy1997")
         property( "sonar.host.url", "https://sonarcloud.io")
-        property( "sonar.coverage.jacoco.xmlReportPaths", layout.buildDirectory.file("jacocoHtml/jacocoXml"))
+        property( "sonar.coverage.jacoco.xmlReportPaths", layout.buildDirectory.file("jacocoHtml/jacoco.xml"))
     }
 }
 
