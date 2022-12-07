@@ -4,7 +4,7 @@ plugins {
     kotlin("jvm") version "1.7.20"
     application
     jacoco
-    id("org.sonarqube") version("3.5.0.2730")
+    id("org.sonarqube") version ("3.5.0.2730")
 }
 
 group = "pawanroy.leetcode"
@@ -23,7 +23,7 @@ tasks.test {
     finalizedBy(tasks.jacocoTestReport)
 }
 
-tasks.jacocoTestReport{
+tasks.jacocoTestReport {
     dependsOn(tasks.test)
     reports {
         xml.required.set(true)
@@ -41,10 +41,11 @@ jacoco {
 
 sonarqube {
     properties {
-        property ("sonar.projectKey", "PawanRoy1997_leetcode_studyplan")
-        property ("sonar.organization", "pawanroy1997")
-        property( "sonar.host.url", "https://sonarcloud.io")
-        property( "sonar.coverage.jacoco.xmlReportPaths", layout.buildDirectory.file("jacocoHtml/jacoco.xml"))
+        property("sonar.projectKey", "PawanRoy1997_leetcode_studyplan")
+        property("sonar.organization", "pawanroy1997")
+        property("sonar.host.url", "https://sonarcloud.io")
+        property("sonar.java.coveragePlugin", "jacoco")
+        property("sonar.coverage.jacoco.xmlReportPaths", layout.buildDirectory.file("jacocoHtml/jacoco.xml"))
     }
 }
 
