@@ -32,4 +32,5 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           chmod +x ./gradlew
+          ./gradlew jacocoTestReport
           ./gradlew build sonarqube --info
