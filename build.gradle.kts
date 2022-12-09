@@ -44,7 +44,6 @@ sonarqube {
         property("sonar.organization", "pawanroy1997")
         property("sonar.host.url", "https://sonarcloud.io")
         property("sonar.java.coveragePlugin", "jacoco")
-        property("sonar.coverage.jacoco.xmlReportPaths", layout.buildDirectory.file("jacocoHtml/jacoco.xml"))
     }
 }
 
