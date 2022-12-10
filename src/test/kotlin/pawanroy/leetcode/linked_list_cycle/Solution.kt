@@ -1,6 +1,7 @@
 package pawanroy.leetcode.linked_list_cycle
 
 import org.junit.jupiter.api.Test
+import pawanroy.leetcode.ListNode
 import kotlin.test.assertEquals
 import kotlin.test.assertNull
 

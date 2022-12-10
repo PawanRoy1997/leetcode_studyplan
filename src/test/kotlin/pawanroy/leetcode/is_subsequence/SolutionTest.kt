@@ -5,23 +5,40 @@ import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
 class SolutionTest {
+    private val solution = Solution()
+
     @Test
     fun testCaseOne() {
-        assertTrue { Solution().isSubsequence("abc","ahbgdc") }
+        assertTrue { solution.isSubsequence("abc","ahbgdc") }
     }
 
     @Test
     fun testCaseTwo() {
-        assertTrue { Solution().isSubsequence("ab","baab") }
-    }
-
-    @Test
-    fun testCaseFour() {
-        assertFalse { Solution().isSubsequence("ab","ba") }
+        assertTrue { solution.isSubsequence("ab","baab") }
     }
 
     @Test
     fun testCaseThree(){
-        assertTrue { Solution().isSubsequence("abcc","baaaabbbcccc") }
+        assertTrue { solution.isSubsequence("abcc","baaaabbbcccc") }
+    }
+
+    @Test
+    fun testCaseFour() {
+        assertFalse { solution.isSubsequence("ab","ba") }
+    }
+
+    @Test
+    fun testCaseFive(){
+        assertTrue { solution.isSubsequence("", "ab") }
+    }
+
+    @Test
+    fun testCaseSix(){
+        assertFalse { solution.isSubsequence("abc", "ab") }
+    }
+
+    @Test
+    fun testCaseSeven(){
+        assertFalse { solution.isSubsequence("abc", "efghij") }
     }
 }

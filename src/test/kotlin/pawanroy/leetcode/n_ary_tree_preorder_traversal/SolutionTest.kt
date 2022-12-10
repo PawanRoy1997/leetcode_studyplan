@@ -1,8 +1,8 @@
 package pawanroy.leetcode.n_ary_tree_preorder_traversal
 
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import pawanroy.leetcode.linked_list_cycle.ListNode
+import pawanroy.leetcode.Node
 
 class SolutionTest{
     @Test

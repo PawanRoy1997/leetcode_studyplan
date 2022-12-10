@@ -1,8 +1,6 @@
 package pawanroy.leetcode.merge_two_sorted_list
 
-class ListNode(var `val`: Int) {
-    var next: ListNode? = null
-}
+import pawanroy.leetcode.ListNode
 
 class Solution {
     fun mergeTwoLists(list1: ListNode?, list2: ListNode?): ListNode? {

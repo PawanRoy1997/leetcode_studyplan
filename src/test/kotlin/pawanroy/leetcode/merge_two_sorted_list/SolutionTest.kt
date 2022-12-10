@@ -2,6 +2,7 @@ package pawanroy.leetcode.merge_two_sorted_list
 
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
+import pawanroy.leetcode.ListNode
 
 class SolutionTest {
     @Test
@@ -30,5 +31,20 @@ class SolutionTest {
         val list1 = ListNode(1)
         val mergeTwoLists = Solution().mergeTwoLists(null, list1)
         assertEquals(list1, mergeTwoLists)
+    }
+
+    @Test
+    fun testCaseFive(){
+        val list2 = ListNode(2)
+        val mergedTwoList = Solution().mergeTwoLists(null, list2)
+        assertEquals(list2, mergedTwoList)
+    }
+
+    @Test
+    fun testCaseSix() {
+        val list1 = ListNode(2)
+        val list2 = ListNode(1)
+        val mergeTwoLists = Solution().mergeTwoLists(list1, list2)
+        assertEquals(list2, mergeTwoLists)
     }
 }

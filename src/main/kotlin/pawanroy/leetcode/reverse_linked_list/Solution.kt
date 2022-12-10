@@ -1,18 +1,15 @@
 package pawanroy.leetcode.reverse_linked_list
 
+import pawanroy.leetcode.ListNode
+
 class Solution {
-    class ListNode(val `val`: Int) {
-        var next: ListNode? = null
-    }
 
     fun reverseList(head: ListNode?): ListNode? {
+        if (head == null) return head
         return getTail(null, head)
     }
 
-
-    fun getTail(prev: ListNode?, current: ListNode?): ListNode? {
-        if (current == null) return current
-
+    private fun getTail(prev: ListNode?, current: ListNode): ListNode? {
         val next = current.next
         current.next = prev
         return if (next == null) current

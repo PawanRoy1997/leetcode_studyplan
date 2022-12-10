@@ -1,8 +1,6 @@
 package pawanroy.leetcode.linked_list_cycle
 
-class ListNode(var `val`: Int) {
-    var next: ListNode? = null
-}
+import pawanroy.leetcode.ListNode
 
 class Solution {
 

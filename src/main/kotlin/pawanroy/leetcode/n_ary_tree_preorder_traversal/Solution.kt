@@ -1,8 +1,6 @@
 package pawanroy.leetcode.n_ary_tree_preorder_traversal
 
-class Node(var `val`: Int) {
-    var children: List<Node>? = null
-}
+import pawanroy.leetcode.Node
 
 class Solution {
 
