@@ -12,4 +12,8 @@ class SolutionTest{
     fun testCaseTwo(){
         assertFalse(Solution().isIsomorphic("abcdefghijklmnopqrstuvwxyzva","abcdefghijklmnopqrstuvwxyzck"))
     }
+    @Test
+    fun testCaseThree(){
+        assertTrue(Solution().isIsomorphic("ADD","egg"))
+    }
 }
