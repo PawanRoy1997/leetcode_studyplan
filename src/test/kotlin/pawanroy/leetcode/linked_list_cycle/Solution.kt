@@ -2,6 +2,7 @@ package pawanroy.leetcode.linked_list_cycle
 
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertNull
 
 class SolutionTest {
 
@@ -45,5 +46,10 @@ class SolutionTest {
         node.next = cycle
         val detectCycle = Solution().detectCycle(head)
         assertEquals(cycle, detectCycle)
+    }
+
+    @Test
+    fun testNullHead(){
+        assertNull(Solution().detectCycle(null))
     }
 }

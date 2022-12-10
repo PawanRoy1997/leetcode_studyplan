@@ -9,8 +9,8 @@ class Solution {
     fun detectCycle(head: ListNode?): ListNode? {
         if (head == null) return null
         var node = head
-        while (node?.`val` != -10000) {
-            if (node?.next == null) {
+        while (node!!.`val` != -10000) {
+            if (node.next == null) {
                 node = null
                 break
             }
