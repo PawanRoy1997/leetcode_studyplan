@@ -12,7 +12,7 @@ class Solution {
                 emptyList()
             }
 
-            (root.children.isNullOrEmpty()) -> {
+            (root.children == null) -> {
                 arrayListOf(root.`val`)
             }
 
