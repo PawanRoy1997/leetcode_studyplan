@@ -17,4 +17,11 @@ class SolutionTest{
         val target = 1
         assertEquals(0, Solution().search(intRange, target))
     }
+
+    @Test
+    fun testNotInList(){
+        val intRange = intArrayOf(1,2,3,4,5,6,7,8)
+        val target = 10
+        assertEquals(-1, Solution().search(intRange, target))
+    }
 }
