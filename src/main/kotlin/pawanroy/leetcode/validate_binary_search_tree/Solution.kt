@@ -4,19 +4,9 @@ import pawanroy.leetcode.TreeNode
 
 class Solution {
     fun isValidBST(root: TreeNode?): Boolean {
-        if (root == null) return true
-        val list = getList(root)
-        var result = true
-        var prev:Int? = null
-        list.forEach{
-            if(prev == null){
-                prev = it
-            }else {
-                result = result && prev!! < it
-                prev = it
-            }
-        }
-        return result
+        return getList(root).asSequence()
+            .zipWithNext { previous, current -> previous < current }
+            .all { it }
     }
 
     private fun getList(root: TreeNode?): ArrayList<Int> {
