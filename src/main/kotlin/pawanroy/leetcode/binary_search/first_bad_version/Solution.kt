@@ -30,7 +30,7 @@ abstract class VersionControl {
     var badVersion: Int = 0
 
     fun isBadVersion(n: Int): Boolean {
-        return n > badVersion
+        return n >= badVersion
     }
 
     abstract fun firstBadVersion(n: Int): Int
