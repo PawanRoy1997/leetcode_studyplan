@@ -2,18 +2,17 @@ package pawanroy.leetcode.find_pivot_index
 
 class Solution {
     fun pivotIndex(nums: IntArray): Int {
-        var sum = 0f
-        nums.forEach { sum += it }
+        val sum = nums.sum()
+        var halfSum = 0
         var pivotIndex = -1
-        val halfSum = sum
-        sum = 0f
-        for (index in nums.indices) {
-            if (sum == (halfSum - nums[index]) /2) {
-                pivotIndex = index
+        for (i in nums.indices) {
+            if (halfSum == sum - nums[i] - halfSum) {
+                pivotIndex = i
                 break
             }
-            sum += nums[index]
+            halfSum += nums[i]
         }
         return pivotIndex
+
     }
 }
