@@ -1,7 +1,6 @@
 package pawanroy.leetcode.binary_tree_level_order_traversal
 
 import pawanroy.leetcode.TreeNode
-import kotlin.math.max
 
 class Solution {
     private val result = ArrayList<ArrayList<Int>>()
