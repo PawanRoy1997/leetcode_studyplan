@@ -4,24 +4,17 @@ import pawanroy.leetcode.TreeNode
 import kotlin.math.max
 
 class Solution {
+    private val result = ArrayList<ArrayList<Int>>()
     fun levelOrder(root: TreeNode?): List<List<Int>> {
-        return if (root == null) emptyList() else ArrayList<List<Int>>().apply {
-            add(listOf(root.`val`))
-            val left = levelOrder(root.left)
-            val right = levelOrder(root.right)
-            val levels = max(left.size, right.size)
-            repeat(levels) {
-                add(
-                    arrayListOf<Int>().apply {
-                        addAll(left.getValue(it))
-                        addAll(right.getValue(it))
-                    }
-                )
-            }
-        }
+        putValues(root, 0)
+        return result
     }
 
-    private fun List<List<Int>>.getValue(index:Int): List<Int>{
-        return if(index < this.size) this.get(index) else emptyList()
+    private fun putValues(root: TreeNode?, generation: Int) {
+        if (root == null) return
+        if (generation == result.size) result.add(arrayListOf())
+        result[generation].add(root.`val`)
+        putValues(root.left, generation + 1)
+        putValues(root.right, generation + 1)
     }
 }
