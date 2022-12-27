@@ -16,11 +16,4 @@ class Solution {
         }
         return result
     }
-
-    private fun getTail(prev: ListNode?, current: ListNode): ListNode? {
-        val next = current.next
-        current.next = prev
-        return if (next == null) current
-        else getTail(current, next)
-    }
 }
