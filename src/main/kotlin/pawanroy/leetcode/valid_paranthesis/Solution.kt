@@ -3,48 +3,25 @@ package pawanroy.leetcode.valid_paranthesis
 import java.util.*
 
 class Solution {
-    private var small = 0
-    private var medium = 0
-    private var large = 0
-
-    private var stack = Stack<Char>()
-
     fun isValid(s: String): Boolean {
-        if (s.isEmpty()) return small == 0 && medium == 0 && large == 0
-        when (s.first()) {
-            '(' -> {
-                small++
-                stack.push(s.first())
-            }
-
-            '[' -> {
-                medium++
-                stack.push(s.first())
-            }
-
-            '{' -> {
-                large++
-                stack.push(s.first())
-            }
-
-            ')' -> {
-                if(stack.isEmpty()) return false
-                val lastElement = stack.pop()
-                if (lastElement == '(') small--
-            }
-
-            ']' -> {
-                if(stack.isEmpty()) return false
-                val lastElement = stack.pop()
-                if (lastElement == '[') medium--
-            }
-
-            '}' -> {
-                if(stack.isEmpty()) return false
-                val lastElement = stack.pop()
-                if (lastElement == '{') large--
+        var brackets = 0
+        val stack = Stack<Char>()
+        s.forEach {
+            if (it == '(' || it == '[' || it == '{') {
+                brackets++
+                stack.push(it)
+            } else {
+                if (stack.hasOpeningBracket(it)) {
+                    stack.pop(); brackets--
+                } else return false
             }
         }
-        return isValid(s.substring(1))
+        return brackets == 0
+    }
+
+    private fun Stack<Char>.hasOpeningBracket(input: Char): Boolean {
+        return if (this.isEmpty()) false else (input == ')' && this.peek() == '(')
+                || (input == ']' && this.peek() == '[')
+                || (input == '}' && this.peek() == '{')
     }
 }

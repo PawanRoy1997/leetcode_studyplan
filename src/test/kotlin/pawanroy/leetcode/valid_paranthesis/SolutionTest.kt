@@ -23,6 +23,11 @@ class SolutionTest {
     }
 
     @Test
+    fun allBracketsTest() {
+        assertTrue { solution.isValid("()[]{}") }
+    }
+
+    @Test
     fun complexTest() {
         assertTrue { solution.isValid("{[()]}") }
     }
