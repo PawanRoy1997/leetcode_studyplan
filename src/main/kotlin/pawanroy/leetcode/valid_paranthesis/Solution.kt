@@ -10,11 +10,10 @@ class Solution {
             if (it == '(' || it == '[' || it == '{') {
                 brackets++
                 stack.push(it)
-            } else {
-                if (stack.hasOpeningBracket(it)) {
-                    stack.pop(); brackets--
-                } else return false
-            }
+            } else if (stack.hasOpeningBracket(it)) {
+                stack.pop(); brackets--
+            } else return false
+
         }
         return brackets == 0
     }
