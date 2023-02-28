@@ -11,7 +11,6 @@ class Solution {
         var imax = m
         val half = (m + n + 1) / 2
         var maxLeft = 0.0
-        var minRight = 0.0
         while (imin <= imax) {
             i = (imin + imax) / 2
             j = half - i
@@ -33,7 +32,7 @@ class Solution {
         if ((m + n) % 2 == 1) {
             return maxLeft
         }
-        minRight = if (i == m) {
+        val minRight: Double = if (i == m) {
             nums2[j].toDouble()
         } else if (j == n) {
             nums1[i].toDouble()
