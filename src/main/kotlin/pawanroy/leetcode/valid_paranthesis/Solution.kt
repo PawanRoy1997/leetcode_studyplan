@@ -19,7 +19,7 @@ class Solution {
     }
 
     private fun Stack<Char>.hasOpeningBracket(input: Char): Boolean {
-        return if (this.isEmpty()) false else (input == ')' && this.peek() == '(')
+        return this.isNotEmpty() || (input == ')' && this.peek() == '(')
                 || (input == ']' && this.peek() == '[')
                 || (input == '}' && this.peek() == '{')
     }
