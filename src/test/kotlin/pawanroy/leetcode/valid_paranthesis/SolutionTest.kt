@@ -1,6 +1,7 @@
 package pawanroy.leetcode.valid_paranthesis
 
 import org.junit.jupiter.api.Test
+import java.util.*
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
@@ -20,6 +21,36 @@ class SolutionTest {
     @Test
     fun largeTest() {
         assertTrue { solution.isValid("{}") }
+    }
+
+    @Test
+    fun smallFFTest() {
+        assertFalse { solution.isValid("[()") }
+    }
+
+    @Test
+    fun mediumFFTest() {
+        assertFalse { solution.isValid("{[]") }
+    }
+
+    @Test
+    fun largeFFTest() {
+        assertFalse { solution.isValid("[{}") }
+    }
+
+    @Test
+    fun smallFTest() {
+        assertFalse { solution.isValid(")(") }
+    }
+
+    @Test
+    fun mediumFTest() {
+        assertFalse { solution.isValid("][") }
+    }
+
+    @Test
+    fun largeFTest() {
+        assertFalse { solution.isValid("}{") }
     }
 
     @Test
