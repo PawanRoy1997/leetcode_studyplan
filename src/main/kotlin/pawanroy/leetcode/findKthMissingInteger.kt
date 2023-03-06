@@ -1,6 +1,6 @@
 package pawanroy.leetcode
 
-internal class Solution {
+class Solution {
     fun findKthPositive(arr: IntArray, k: Int): Int {
         var left = 0
         var right = arr.lastIndex
