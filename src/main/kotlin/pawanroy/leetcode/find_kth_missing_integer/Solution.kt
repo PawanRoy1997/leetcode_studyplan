@@ -1,4 +1,4 @@
-package pawanroy.leetcode
+package pawanroy.leetcode.find_kth_missing_integer
 
 class Solution {
     fun findKthPositive(arr: IntArray, k: Int): Int {

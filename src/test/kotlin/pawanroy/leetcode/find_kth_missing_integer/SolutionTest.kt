@@ -1,4 +1,4 @@
-package pawanroy.leetcode
+package pawanroy.leetcode.find_kth_missing_integer
 
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
