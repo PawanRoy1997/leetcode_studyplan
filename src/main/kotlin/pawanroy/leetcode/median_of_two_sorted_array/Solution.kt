@@ -1,5 +1,6 @@
 package pawanroy.leetcode.median_of_two_sorted_array
 
+@Suppress("kotlin:S3776")
 class Solution {
     fun findMedianSortedArrays(nums1: IntArray, nums2: IntArray): Double {
         val m = nums1.size

@@ -2,6 +2,7 @@ package pawanroy.leetcode.jump_game_iv
 
 import java.util.*
 
+@Suppress("kotlin:S3776")
 class Solution {
     fun minJumps(arr: IntArray): Int {
         val n = arr.size

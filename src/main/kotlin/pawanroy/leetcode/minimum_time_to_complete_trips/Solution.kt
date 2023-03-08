@@ -1,5 +1,6 @@
 package pawanroy.leetcode.minimum_time_to_complete_trips
 
+@Suppress("kotlin:S3776")
 class Solution {
     fun minimumTime(time: IntArray, totalTrips: Int): Long {
 

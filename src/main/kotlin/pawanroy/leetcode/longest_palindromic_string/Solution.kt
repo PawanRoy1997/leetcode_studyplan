@@ -1,5 +1,6 @@
 package pawanroy.leetcode.longest_palindromic_string
 
+@Suppress("kotlin:S3776")
 class Solution {
     fun longestPalindrome(s: String): String {
         var result = ""
@@ -27,6 +28,6 @@ class Solution {
             }
             if (result.length < builder.length) result = builder.toString()
         }
-        return if (result.isEmpty()) s.first().toString() else result
+        return result.ifEmpty { s.first().toString() }
     }
 }
