@@ -8,13 +8,13 @@ class Solution {
         var cursor2 = l2
         var result: ListNode? = null
         var cursor3: ListNode? = null
-        var carry = false
 
-        while (cursor1 != null || cursor2 != null) {
-            val sum = ListNode(cursor1.value() + cursor2.value() + if (carry) 1 else 0)
-            carry = sum.`val` > 9
-            if (carry) {
+        while (cursor1 != cursor2) {
+            val sum = ListNode(cursor1.value() + cursor2.value())
+            if (sum.`val` >= 10) {
                 sum.`val` = sum.`val` - 10
+                if (cursor1!!.next == null) cursor1.next = ListNode(1)
+                else cursor1.next!!.`val`++
             }
             if (cursor3 == null) {
                 cursor3 = sum
@@ -27,8 +27,6 @@ class Solution {
             cursor1 = cursor1?.next
             cursor2 = cursor2?.next
         }
-
-        if (carry) cursor3?.next = ListNode(1)
 
         return result
     }

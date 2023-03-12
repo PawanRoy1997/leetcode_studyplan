@@ -13,7 +13,7 @@ class SolutionTest {
             getNode(1, getNode(2, getNode(3)))
         )
         val results = ArrayList<Int>()
-        for (i in 0..2) {
+        for (i in 0..100) {
             results.add(solution.getRandom())
         }
         assertContains(results, 1)
