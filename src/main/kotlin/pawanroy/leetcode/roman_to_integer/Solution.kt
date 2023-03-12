@@ -1,12 +1,6 @@
 package pawanroy.leetcode.roman_to_integer
 
 class Solution {
-    /**
-     * Three possible cases:
-     * 1. Same numbers are together -> Addition
-     * 2. Small first bigger later -> Subtraction
-     * 3. Bigger first smaller later -> Addition
-     */
 
     private fun getValue(c: Char): Int {
         return when (c) {
@@ -23,8 +17,8 @@ class Solution {
 
     fun romanToInt(s: String): Int {
         var result = 0
-        var current = 0
-        var prev = 0
+        var current: Int
+        var prev: Int
         for (i in s.indices) {
             current = getValue(s[i])
             prev = if (i > 0) getValue(s[i - 1]) else 2000

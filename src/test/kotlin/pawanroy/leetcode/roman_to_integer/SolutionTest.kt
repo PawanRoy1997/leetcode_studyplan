@@ -25,4 +25,19 @@ class SolutionTest {
     fun complex(){
         assertEquals(58, solution.romanToInt("LVIII"))
     }
+
+    @Test
+    fun complete(){
+        assertEquals(334,solution.romanToInt("IVXLCDM"))
+    }
+
+    @Test
+    fun completeInverse(){
+        assertEquals(1666,solution.romanToInt("MDCLXVI"))
+    }
+
+    @Test
+    fun illegal(){
+        assertEquals(0,solution.romanToInt("Z"))
+    }
 }

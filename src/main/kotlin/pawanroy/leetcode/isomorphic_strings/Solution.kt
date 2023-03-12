@@ -1,21 +1,21 @@
 package pawanroy.leetcode.isomorphic_strings
 
 private const val UNSET = -1
+
 class Solution {
     fun isIsomorphic(s: String, t: String): Boolean {
-        val mapS = IntArray(256){ UNSET }
-        val mapT = IntArray(256){ UNSET }
+        val mapS = IntArray(256) { UNSET }
+        val mapT = IntArray(256) { UNSET }
 
-        for(i in s.indices) {
+        for (i in s.indices) {
             val c1: Int = s[i].code
             val c2: Int = t[i].code
 
-            if(mapS[c1] == UNSET && mapT[c2] == UNSET) {
+            if (mapS[c1] == mapT[c2] && mapT[c2] == UNSET) {
                 mapS[c1] = c2
                 mapT[c2] = c1
-            } else if(!(mapS[c1] == c2 && mapT[c2] == c1)) {
-                return false
             }
+            if (mapT[c2] != c1 || mapS[c1] != c2) return false
         }
         return true
     }
