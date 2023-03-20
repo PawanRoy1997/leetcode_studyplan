@@ -2,16 +2,13 @@ package pawanroy.leetcode.`1-two-sum`
 
 class Solution {
     fun twoSum(nums: IntArray, target: Int): IntArray {
-        var result = intArrayOf()
-        for(firstIndex in nums.indices){
-            for(secondIndex in (firstIndex+1) until nums.size){
-                if(nums[firstIndex]+nums[secondIndex] == target){
-                    result = intArrayOf(firstIndex,secondIndex)
-                    break
+        for(i in 0 until nums.lastIndex){
+            for(j in i+1..nums.lastIndex){
+                if(nums[j] == target - nums[i]){
+                    return intArrayOf(i,j)
                 }
             }
-            if(result.isNotEmpty()) break
         }
-        return result
+        return intArrayOf()
     }
 }
