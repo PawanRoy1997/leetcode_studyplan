@@ -9,10 +9,6 @@ class SolutionTest {
     @Test
     fun caseOne() {
         val threeSum = sol.threeSum(intArrayOf(-1, 0, 1, 2, -1, -4))
-        threeSum.forEach {
-            it.forEach(::print)
-            println()
-        }
         assertEquals(2, threeSum.size)
     }
 
@@ -3023,5 +3019,21 @@ class SolutionTest {
             )
         )
         assertEquals(16258, threeSum.size)
+    }
+
+    @Test
+    fun caseThree() {
+        val threeSum = sol.threeSum(
+            intArrayOf(0,0,0,0)
+        )
+        assertEquals(1, threeSum.size)
+    }
+
+    @Test
+    fun caseFour() {
+        val threeSum = sol.threeSum(
+            intArrayOf(-4,-3,-2,-1,0,0,1,2,3,4)
+        )
+        assertEquals(8, threeSum.size)
     }
 }
