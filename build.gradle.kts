@@ -4,7 +4,7 @@ plugins {
     kotlin("jvm") version "1.7.20"
     application
     jacoco
-    id("org.sonarqube") version ("3.5.0.2730")
+    id("org.sonarqube") version ("4.0.0.2929")
 }
 
 group = "pawanroy.leetcode"
@@ -48,7 +48,7 @@ sonarqube {
 }
 
 tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "11"
+    kotlinOptions.jvmTarget = "1.8"
 }
 
 application {
