@@ -13,7 +13,7 @@ class Solution {
         }
         val sb = StringBuilder()
         s.forEach { c ->
-            if(c.toString() in VOVELS){
+            if(c.lowercase() in VOVELS){
                 sb.append(vovels[count])
                 count--
             }
