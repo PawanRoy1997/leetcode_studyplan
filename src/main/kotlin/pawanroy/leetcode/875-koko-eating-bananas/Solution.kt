@@ -7,6 +7,7 @@ class Solution {
         var upper = 0L
 
         fun getHours(piles: IntArray, speed: Long): Int {
+            if(speed == 0L) return Integer.MAX_VALUE
             var hours = 0
             for (item in piles) {
                 hours += (item.toLong() / speed).toInt()
