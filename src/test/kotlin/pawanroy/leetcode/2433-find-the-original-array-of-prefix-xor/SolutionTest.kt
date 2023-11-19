@@ -8,7 +8,7 @@ class SolutionTest {
     @Test
     fun caseOne(){
         assertArrayEquals(intArrayOf(1), sol.findArray(intArrayOf(1)))
-        assertArrayEquals(intArrayOf(1,2), sol.findArray(intArrayOf(1,2)))
+        assertArrayEquals(intArrayOf(1,3), sol.findArray(intArrayOf(1,2)))
     }
 
     @Test
