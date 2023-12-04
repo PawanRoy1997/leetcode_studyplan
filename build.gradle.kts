@@ -4,7 +4,7 @@ plugins {
     kotlin("jvm") version "1.7.20"
     application
     jacoco
-    id("org.sonarqube") version ("4.0.0.2929")
+    id("org.sonarqube") version ("4.4.1.3373")
 }
 
 group = "pawanroy.leetcode"
@@ -38,7 +38,7 @@ jacoco {
     reportsDirectory.set(layout.buildDirectory.dir("jacocoHtml"))
 }
 
-sonarqube {
+sonar {
     properties {
         property("sonar.projectKey", "PawanRoy1997_leetcode_studyplan")
         property("sonar.organization", "pawanroy1997")
