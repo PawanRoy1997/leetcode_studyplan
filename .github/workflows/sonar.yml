@@ -18,3 +18,11 @@ jobs:
         run: |
           chmod +x ./gradlew
           ./gradlew test
+      - name: Upload Reports
+        uses: actions/upload-artifact@v3
+        if: success() || failure()
+        with:
+          name: Reports
+          path: |
+            **/build/reports/
+            **/build/test-results/
