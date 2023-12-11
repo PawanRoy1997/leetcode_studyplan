@@ -11,7 +11,7 @@ class Solution {
                 count = 1
                 prev = num
             }
-            if(count >= threshold){
+            if(count > threshold){
                 return num
             }
         }
