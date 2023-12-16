@@ -1,22 +1,24 @@
 package pawanroy.leetcode.`242-valid-anagram`
 
 class Solution {
-    val sOcc = IntArray(256) { 0 }
-    val tOcc = IntArray(256) { 0 }
+    private val count = IntArray(256) { 0 }
     fun isAnagram(s: String, t: String): Boolean {
         if (s.length != t.length) return false
         val hSet = HashSet<Char>()
-        for (c in s.toCharArray()) {
-            sOcc[c - 'a'] += 1
-            hSet.add(c)
+
+        s.toCharArray().forEach {
+            hSet.add(it)
+            count[it - 'a'] += 1
         }
-        for (c in t.toCharArray()) tOcc[c - 'a'] += 1
+        t.toCharArray().forEach {
+            hSet.add(it)
+            count[it - 'a'] -= 1
+        }
 
         for (c in hSet) {
-            if (tOcc[c - 'a'] != sOcc[c - 'a']) return false
+            if (count[c - 'a'] != 0) return false
         }
 
         return true
-
     }
 }
