@@ -2,23 +2,39 @@ package pawanroy.leetcode.`2491-divide-players-into-equals-skills`
 
 class Solution {
     fun dividePlayers(skill: IntArray): Long {
-        val avg = (skill.sum() * 2) / skill.size
+        var res = 0L
 
-        val list = ArrayList<Pair<Int, Int>>()
+        val frequency = IntArray(1001) { 0 }
+        skill.forEach { frequency[it]++ }
 
-        skill.sort()
-        val sortedList = ArrayList<Int>()
-        skill.forEach(sortedList::add)
+        var start = 1
+        var end = 1000
 
-        while (sortedList.isNotEmpty()) {
-            val first = sortedList.first()
-            sortedList.removeFirst()
-            if (sortedList.isNotEmpty() && sortedList.last() == (avg - first)) {
-                list.add(Pair(first, avg - first))
-                sortedList.removeLast()
+        var avg = -1
+
+        while(start<=end){
+            if(frequency[start] == 0) {
+                start++
+                continue
+            }
+            if(frequency[end] == 0) {
+                end--
+                continue
+            }
+
+            if(avg == -1){
+                avg = start + end
+            }
+
+            if(start + end == avg){
+                res += start.toLong()* end.toLong()
+                frequency[start]--
+                frequency[end]--
+            }else{
+                end = -1
             }
         }
 
-        return if (list.size < (skill.size / 2)) -1L else list.sumOf { it.first.toLong() * it.second.toLong() }
+        return if (end == -1) -1L else res
     }
 }
