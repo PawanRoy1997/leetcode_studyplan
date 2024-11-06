@@ -2,30 +2,24 @@ package pawanroy.leetcode.`3011-find-if-array-can-be-sorted`
 
 class Solution {
     fun canSortArray(nums: IntArray): Boolean {
-        var temp: ArrayList<Int> = arrayListOf()
-        val map: MutableMap<Int, Int> = HashMap()
-        nums.forEach { map[it] = it.countOneBits(); temp.add(it) }
-        var res = true
-        val n = temp.size
-
-        while(res){
-            var i = 1
-            var swap = false
-            while(i < n){
-                if(temp[i - 1] < temp[i]) i++
-                else if(map[temp[i-1]] == map[temp[i]]){
-                    temp[i-1]+= temp[i]
-                    temp[i] = temp[i-1] - temp[i]
-                    temp[i-1] -= temp[i]
-                    swap = true
-                }else{
-                    res = false
-                    break
-                }
+        var parityMax = 0
+        var currentMin = 0
+        var currentMax = 0
+        var parityCount:Byte = 0
+        for (v in nums) {
+            val currentCount = Integer.bitCount(v).toByte()
+            if (parityCount == currentCount) {
+                currentMin = minOf(v, currentMin)
+                currentMax = maxOf(v, currentMax)
+            } else if (currentMin < parityMax) {
+                return false
+            } else {
+                parityMax = currentMax
+                currentMax = v
+                currentMin = currentMax
+                parityCount = currentCount
             }
-            if(i == n && !swap) break
         }
-
-        return res
+        return currentMin >= parityMax
     }
 }
