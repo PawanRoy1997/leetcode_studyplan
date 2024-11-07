@@ -2,18 +2,16 @@ package pawanroy.leetcode.`2275-largest-combination-with-bitwise-and-greater-tha
 
 class Solution {
     fun largestCombination(candidates: IntArray): Int {
-        val counts = IntArray(24) { 0 }
-        var index = 0
-        var num: Int
-        candidates.forEach { candidate ->
-            index = 0
-            num = candidate
-            while (num > 0) {
-                counts[index] += num % 2
-                num /= 2
-                index++
+        var res = 1
+        var count = 0
+        for(i in 0..25){
+            count = 0
+            candidates.forEachIndexed { index, i ->
+                count += i and 1
+                candidates[index] = i shr 1
             }
+            res = maxOf(res, count)
         }
-        return counts.max()
+        return res
     }
 }
