@@ -4,8 +4,10 @@ class Solution {
     fun shortestDistanceAfterQueries(n: Int, queries: Array<IntArray>): IntArray {
         val distances = IntArray(n){n -1 -it}
 
-        val graph: Array<ArrayList<Int>> = Array(n){ ArrayList() }
-        for(i in 1..distances.lastIndex){ graph[i].add(i-1) }
+        val graph: Array<ArrayList<Int>> = Array(n){ArrayList()}
+        for(i in 1..distances.lastIndex){
+            graph[i].add(i-1)
+        }
 
         val answers = IntArray(queries.size)
 

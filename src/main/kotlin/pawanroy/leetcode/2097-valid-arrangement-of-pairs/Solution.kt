@@ -1,6 +1,7 @@
 package pawanroy.leetcode.`2097-valid-arrangement-of-pairs`
 
 class Solution {
+
     fun validArrangement(pairs: Array<IntArray>): Array<IntArray> {
         val m = mutableMapOf<Int, MutableList<Int>>()
         val f = mutableMapOf<Int, Int>()

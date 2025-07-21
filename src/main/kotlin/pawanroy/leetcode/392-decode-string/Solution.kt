@@ -13,7 +13,6 @@ class Solution {
     }
 
     fun stackWork(stack: ArrayList<String>) {
-        val str: String? = null
         val repeat: Int
         var answ = StringBuilder()
         if (stack.size > 0) {

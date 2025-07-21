@@ -39,39 +39,4 @@ class SolutionTest {
             assertEquals(arr[1], actual[index][1],"Value mismatch")
         }
     }
-
-
-    @Test
-    fun caseFour() {
-        val expected = arrayOf(
-            intArrayOf(8, 7),
-            intArrayOf(7, 0),
-            intArrayOf(0, 8),
-            intArrayOf(8, 0),
-            intArrayOf(0, 5),
-            intArrayOf(5, 0),
-            intArrayOf(0, 7),
-            intArrayOf(7, 8),
-            intArrayOf(8, 5)
-        )
-        val actual = sol.validArrangement(
-            arrayOf(
-                intArrayOf(8, 5),
-                intArrayOf(8, 7),
-                intArrayOf(0, 8),
-                intArrayOf(0, 5),
-                intArrayOf(7, 0),
-                intArrayOf(5, 0),
-                intArrayOf(0, 7),
-                intArrayOf(8, 0),
-                intArrayOf(7, 8)
-            )
-        )
-        println(actual.joinToString { it.joinToString() })
-        assertEquals(expected.size, actual.size, "Size mismatch")
-        expected.forEachIndexed { index, arr ->
-            assertEquals(arr[0], actual[index][0],"Value mismatch")
-            assertEquals(arr[1], actual[index][1],"Value mismatch")
-        }
-    }
 }

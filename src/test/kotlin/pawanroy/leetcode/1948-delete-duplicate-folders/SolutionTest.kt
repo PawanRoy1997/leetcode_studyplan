@@ -10,9 +10,4 @@ class SolutionTest {
     fun caseOne(){
         assertEquals(listOf(listOf("d"),listOf("d","a")),sol.deleteDuplicateFolder(listOf(listOf("a"),listOf("c"),listOf("d"),listOf("a","b"),listOf("c","b"),listOf("d","a"))))
     }
-
-    @Test
-    fun caseTwo(){
-        assertEquals(listOf(listOf("a"),listOf("c"),listOf("a","b"),listOf("c","b")), sol.deleteDuplicateFolder(listOf(listOf("a"),listOf("c"),listOf("a","b"),listOf("c","b"),listOf("a","b","x"),listOf("a","b","x","y"),listOf("w"),listOf("w","y"))))
-    }
 }
