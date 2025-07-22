@@ -1,19 +1,17 @@
 package pawanroy.leetcode.`16-3sum-closest`
 
-import java.util.Arrays
-
 class Solution {
     fun threeSumClosest(nums: IntArray, target: Int): Int {
-        Arrays.sort(nums)
         var ans = nums[0]+nums[1]+nums[2]
-        var ptr1 = 0
-        var ptr2 = 1
-        var ptr3 = 2
-
-        while(true){
-            
+        for(i in 0..nums.lastIndex-2){
+            for(j in i+1..nums.lastIndex-1){
+                for(k in j+1..nums.lastIndex){
+                    if(diff(target, ans) > diff(target, nums[i]+nums[j]+nums[k])){
+                        ans = nums[i]+nums[j]+nums[k]
+                    }
+                }
+            }
         }
-
         return ans
     }
 
