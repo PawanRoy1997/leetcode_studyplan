@@ -37,7 +37,7 @@ class Solution {
 
     private fun repeat(answ: StringBuilder, i: Int): StringBuilder {
         val tmp = StringBuilder()
-        repeat(i+1){
+        repeat(i){
             tmp.append(answ)
         }
         return tmp

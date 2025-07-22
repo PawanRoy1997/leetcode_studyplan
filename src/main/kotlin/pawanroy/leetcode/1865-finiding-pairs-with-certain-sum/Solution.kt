@@ -1,6 +1,6 @@
 package pawanroy.leetcode.`1865-finiding-pairs-with-certain-sum`
 
-class FindSumPairs(nums1: IntArray, nums2: IntArray) {
+class FindSumPairs(nums1: IntArray, val nums2: IntArray) {
     val map1 = mutableMapOf<Int, Int>()
     val map2 = mutableMapOf<Int, Int>()
 
