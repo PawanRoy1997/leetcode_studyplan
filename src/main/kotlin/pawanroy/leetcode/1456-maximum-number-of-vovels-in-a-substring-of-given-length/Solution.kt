@@ -6,11 +6,11 @@ class Solution {
         var current = 0
         for (i in s.indices) {
             if (i < k) {
-                if (s.get(i).isVovel()) current += 1
+                if (s[i].isVovel()) current += 1
             } else {
                 max = maxOf(max, current)
-                if (s.get(i).isVovel()) current += 1
-                if (s.get(i - k).isVovel()) current -= 1
+                if (s[i].isVovel()) current += 1
+                if (s[i - k].isVovel()) current -= 1
             }
         }
         return maxOf(max, current)

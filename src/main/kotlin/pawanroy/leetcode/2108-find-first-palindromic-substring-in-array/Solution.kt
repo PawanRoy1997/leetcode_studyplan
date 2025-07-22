@@ -17,6 +17,6 @@ class Solution {
     }
 
     private fun String.isPalindrome(): Boolean {
-        return this.equals(StringBuilder(this).reverse().toString())
+        return this == StringBuilder(this).reverse().toString()
     }
 }

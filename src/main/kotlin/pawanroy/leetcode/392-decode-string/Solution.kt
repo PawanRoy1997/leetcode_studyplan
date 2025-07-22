@@ -15,20 +15,20 @@ class Solution {
     fun stackWork(stack: ArrayList<String>) {
         val repeat: Int
         var answ = StringBuilder()
-        if (stack.size > 0) {
+        if (stack.isNotEmpty()) {
             answ = StringBuilder(stack[stack.size - 1])
             stack.removeAt(stack.size - 1)
         }
-        while (stack.size > 0 && !stack[stack.size - 1][0].isDigit()) {
+        while (stack.isNotEmpty() && !stack[stack.size - 1][0].isDigit()) {
             answ.insert(0, stack[stack.size - 1])
             stack.removeAt(stack.size - 1)
         }
-        if (stack.size > 0 && stack[stack.size - 1][0].isDigit()) {
+        if (stack.isNotEmpty() && stack[stack.size - 1][0].isDigit()) {
             repeat = stack[stack.size - 1].toInt()
             stack.removeAt(stack.size - 1)
             answ = repeat(answ, repeat)
         }
-        while (stack.size > 0 && stack[stack.size - 1][0].isLetter()) {
+        while (stack.isNotEmpty() && stack[stack.size - 1][0].isLetter()) {
             answ.insert(0, stack[stack.size - 1])
             stack.removeAt(stack.size - 1)
         }
@@ -37,7 +37,9 @@ class Solution {
 
     private fun repeat(answ: StringBuilder, i: Int): StringBuilder {
         val tmp = StringBuilder()
-        for (j in 0 until i) tmp.append(answ)
+        repeat(i+1){
+            tmp.append(answ)
+        }
         return tmp
     }
 

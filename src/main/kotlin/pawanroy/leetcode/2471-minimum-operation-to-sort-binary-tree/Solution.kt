@@ -12,7 +12,7 @@ class Solution {
         q.add(root)
         val arr = ArrayList<Int>()
         val pq: PriorityQueue<Int> = PriorityQueue()
-        var c = 0
+        var c: Int
 
         while (q.isNotEmpty()) {
             arr.clear()

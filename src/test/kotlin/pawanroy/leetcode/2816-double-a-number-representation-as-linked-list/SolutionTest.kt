@@ -7,7 +7,7 @@ import kotlin.test.assertEquals
 class SolutionTest {
     private val sol = Solution()
     @Test
-    fun caseOne(): Unit {
+    fun caseOne() {
         val head = numberToListNode(189)
         val expected = 378
         val actual = listNodeToNumber(sol.doubleIt(head)!!)

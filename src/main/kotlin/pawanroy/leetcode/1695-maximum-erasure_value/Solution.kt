@@ -5,7 +5,7 @@ class Solution {
         var score = 0
         var ptr = 0
         var result = 0
-        var subArray = mutableSetOf<Int>()
+        val subArray = mutableSetOf<Int>()
 
         for (i in nums.indices) {
             while(subArray.contains(nums[i])) {

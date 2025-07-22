@@ -20,7 +20,7 @@ class Solution {
                 res
             }
 
-            !even1 && !even2 -> {
+            !even1 -> {
                 nums1.forEach { a ->
                     nums2.forEach { b ->
                         res = res xor a xor b

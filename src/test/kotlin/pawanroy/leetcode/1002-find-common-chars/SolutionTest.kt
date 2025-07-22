@@ -6,7 +6,7 @@ class SolutionTest {
     private val sol = Solution()
 
     @Test
-    fun caseOne(): Unit {
+    fun caseOne() {
         val res = sol.commonChars(arrayOf("bella","label","roller"))
         res.forEach(::println)
     }

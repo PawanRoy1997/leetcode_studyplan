@@ -7,7 +7,7 @@ class SolutionTest {
     private val sol = Solution()
 
     @Test
-    fun caseOne(): Unit {
+    fun caseOne() {
         assertEquals(
             'e',
             sol.kthCharacter(

@@ -3,7 +3,7 @@ package pawanroy.leetcode.`2275-largest-combination-with-bitwise-and-greater-tha
 class Solution {
     fun largestCombination(candidates: IntArray): Int {
         var res = 1
-        var count = 0
+        var count: Int
         for(i in 0..25){
             count = 0
             candidates.forEachIndexed { index, i ->

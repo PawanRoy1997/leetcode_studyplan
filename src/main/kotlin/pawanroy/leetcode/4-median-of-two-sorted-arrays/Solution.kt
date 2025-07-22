@@ -25,7 +25,7 @@ class Solution {
                 } else if (j == 0) {
                     nums1[i - 1].toDouble()
                 } else {
-                    Math.max(nums1[i - 1], nums2[j - 1]).toDouble()
+                    nums1[i - 1].coerceAtLeast(nums2[j - 1]).toDouble()
                 }
                 break
             }
@@ -38,7 +38,7 @@ class Solution {
         } else if (j == n) {
             nums1[i].toDouble()
         } else {
-            Math.min(nums1[i], nums2[j]).toDouble()
+            nums1[i].coerceAtMost(nums2[j]).toDouble()
         }
         return (maxLeft + minRight) / 2
     }

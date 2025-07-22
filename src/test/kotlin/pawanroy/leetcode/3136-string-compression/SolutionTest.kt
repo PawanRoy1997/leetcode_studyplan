@@ -12,7 +12,7 @@ class SolutionTest {
     }
 
     @Test
-    fun caseTwo(): Unit {
+    fun caseTwo() {
         assertEquals("9a5a2b",sol.compressedString("aaaaaaaaaaaaaabb"))
     }
 }

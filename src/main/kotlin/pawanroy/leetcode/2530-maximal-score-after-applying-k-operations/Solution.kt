@@ -4,13 +4,9 @@ import java.util.PriorityQueue
 
 class Solution {
     fun maxKelements(nums: IntArray, k: Int): Long {
-        val comparator = object:Comparator<Int>{
-            override fun compare(a:Int, b:Int):Int{
-                return b-a
-            }
-        }
+        val comparator = Comparator<Int> { a, b -> b-a }
 
-        val q = PriorityQueue<Int>(comparator)
+        val q = PriorityQueue(comparator)
         nums.forEach(q::add)
 
         var res = 0L

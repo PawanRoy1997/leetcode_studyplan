@@ -13,7 +13,7 @@ class Solution {
                 current = it
                 count=0
             }
-            if(it == current) count++
+            count++
         }
 
         sb.append("$count$current")

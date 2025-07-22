@@ -1,7 +1,6 @@
 package pawanroy.leetcode.`403-frog-jump`
 
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.assertThrows
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 

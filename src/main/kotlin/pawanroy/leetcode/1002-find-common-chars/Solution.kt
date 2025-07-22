@@ -18,7 +18,7 @@ class Solution {
         str1.forEach{ character ->
             ind = 0
             while(ind in str2.indices){
-                if(str2.get(ind) == character && !isUsed[ind]){
+                if(str2[ind] == character && !isUsed[ind]){
                     isUsed[ind] = true
                     result.append(character)
                     break

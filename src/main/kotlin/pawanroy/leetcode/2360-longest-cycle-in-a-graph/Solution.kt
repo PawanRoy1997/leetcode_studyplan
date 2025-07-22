@@ -14,7 +14,7 @@ class Solution {
                 u = edges[u]
             }
             if (u != -1 && nodeVisitedAtTime[u] >= startTime) longestCycleLen =
-                Math.max(longestCycleLen, timeStep - nodeVisitedAtTime[u])
+                longestCycleLen.coerceAtLeast(timeStep - nodeVisitedAtTime[u])
         }
         return longestCycleLen
     }

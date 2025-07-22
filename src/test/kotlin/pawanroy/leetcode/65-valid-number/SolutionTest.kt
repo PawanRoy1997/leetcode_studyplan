@@ -8,21 +8,21 @@ class SolutionTest {
     private val sol = Solution()
 
     @Test
-    fun caseInteger(): Unit {
+    fun caseInteger() {
         assertTrue { sol.isNumber("0") }
         assertTrue { sol.isNumber("+1") }
         assertTrue { sol.isNumber("-1") }
     }
 
     @Test
-    fun caseDecimal(): Unit {
+    fun caseDecimal() {
         assertTrue { sol.isNumber("0.1") }
         assertTrue { sol.isNumber("+1.1") }
         assertTrue { sol.isNumber("-1.1") }
     }
 
     @Test
-    fun sampleCases(): Unit {
+    fun sampleCases() {
         assertTrue { sol.isNumber("2") }
         assertTrue { sol.isNumber("0089") }
         assertTrue { sol.isNumber("-0.1") }
@@ -38,7 +38,7 @@ class SolutionTest {
     }
 
     @Test
-    fun failureCases(): Unit {
+    fun failureCases() {
         assertFalse{ sol.isNumber("abc") }
         assertFalse{ sol.isNumber("1a") }
         assertFalse{ sol.isNumber("1e") }

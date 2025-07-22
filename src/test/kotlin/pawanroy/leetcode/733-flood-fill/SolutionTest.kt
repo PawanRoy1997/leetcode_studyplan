@@ -21,7 +21,7 @@ class SolutionTest {
         val output = Solution().floodFill(input, 1, 1, 2)
         expected.forEachIndexed{
             index,array ->
-            assertTrue(Arrays.equals(array, output[index]))
+            assertTrue(array.contentEquals(output[index]))
         }
     }
 

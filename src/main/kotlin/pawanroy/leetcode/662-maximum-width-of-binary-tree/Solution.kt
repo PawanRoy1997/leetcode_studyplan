@@ -6,7 +6,6 @@ import java.util.*
 class Solution {
     class Node(var node: TreeNode, var idx: Int)
 
-    @Suppress("kotlin:S3776")
     fun widthOfBinaryTree(root: TreeNode?): Int {
         if (root == null) return 0
         val queue: Queue<Node> = LinkedList()

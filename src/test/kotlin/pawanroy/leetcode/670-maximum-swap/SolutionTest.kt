@@ -7,12 +7,12 @@ class SolutionTest {
     private val sol = Solution()
 
     @Test
-    fun caseOne(): Unit {
+    fun caseOne() {
         assertEquals(7236, sol.maximumSwap(2736))
     }
 
     @Test
-    fun caseTwo(): Unit {
+    fun caseTwo() {
         assertEquals(9973, sol.maximumSwap(9973))
     }
 }

@@ -3,7 +3,6 @@ package pawanroy.leetcode.`107-binary-tree-level-order-traversal-ii`
 import org.junit.jupiter.api.Test
 import pawanroy.leetcode.TreeNode
 import kotlin.test.assertEquals
-import kotlin.test.assertTrue
 
 class SolutionTest {
     private val sol = Solution()
